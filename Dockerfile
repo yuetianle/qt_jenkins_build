@@ -2,6 +2,7 @@ FROM centos:centos7.8.2003
 MAINTAINER "joinbright"
 ADD ext_lib /root/ext_lib/
 ADD https://dl.bintray.com/boostorg/release/1.73.0/source/boost_1_73_0.tar.gz /root/ext_lib/
+ADD https://download.qt.io/archive/qt/4.8/4.8.4/qt-everywhere-opensource-src-4.8.4.tar.gz /root/ext_lib/
 RUN yum -y install gcc gcc-c++ make passwd openssl openssh-server lsof openssh-clients svn rpm-build java-1.8.0-openjdk-headless java-1.8.0-openjdk && yum clean all \
  && sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd \
  && mkdir -p /var/run/sshd/ \
